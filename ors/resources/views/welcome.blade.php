@@ -39,7 +39,7 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <h1 style="color:rgb(230, 104, 104)">Laravel Practice</h1>
                 <div>
-                    <h1 style="color:rgb(230, 220, 220)">Marc Lester Dela Cruz</h1>
+                    <h1 style="color:rgb(230, 220, 220)">Berts</h1>
                 </div>
             </div>
         </div>
