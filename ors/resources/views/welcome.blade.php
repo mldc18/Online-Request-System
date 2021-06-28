@@ -40,7 +40,11 @@
                 <h1 style="color:rgb(230, 104, 104)">Laravel Practice</h1>
                 <div>
                     <h1 style="color:rgb(230, 220, 220)">Marc Lester Dela Cruz</h1>
+
+                    <h1 style="color:rgb(230, 220, 220)">Noehl Paragas</h1>
+
                     <h1 style="color:rgb(230, 220, 220)">Jeremiah Ibarreta</h1>
+
                 </div>
             </div>
         </div>
