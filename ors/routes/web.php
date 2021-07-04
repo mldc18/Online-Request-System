@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/faq', function () {
     return view('faqspage');
 });
+
