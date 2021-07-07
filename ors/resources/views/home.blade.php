@@ -16,7 +16,8 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
   <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
-  
+  <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -36,7 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+            <a class="nav-link text-uppercase text-expanded" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
