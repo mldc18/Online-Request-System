@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ListOfRequestController;
+use App\Http\Controllers\RequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +21,12 @@ Route::get('/', function () {
 });
 
 Route::get('/listofrequest', [ListOfRequestController::class, 'index']);
+
+Route::get('/request', [RequestController::class, 'index']);
+
+Route::get('/faqs', [FaqsController::class, 'index']);
+
+Route::view('/academic', 'sublistofrequest.absence');
+Route::view('/athletic', 'sublistofrequest.absence');
+Route::view('/absence', 'sublistofrequest.absence');
+Route::view('/tor', 'sublistofrequest.absence');
