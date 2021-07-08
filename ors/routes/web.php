@@ -15,7 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', ['title' => 'HOME']);
 });
 
 Route::get('/listofrequest', [ListOfRequestController::class, 'index']);
+Route::get('/login', function () {
+    return view('auth.login', ['title' => 'LOGIN']);
+});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
