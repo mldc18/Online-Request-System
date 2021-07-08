@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ListOfRequestController;
+use App\Http\Controllers\RequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +20,21 @@ Route::get('/', function () {
     return view('home', ['title' => 'HOME']);
 });
 
-Route::get('/listofrequest', [ListOfRequestController::class, 'index']);
+
 Route::get('/login', function () {
     return view('auth.login', ['title' => 'LOGIN']);
 });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/request', [RequestController::class, 'index']);
+
+Route::get('/faqs', [FaqsController::class, 'index']);
+
+Route::view('/academic', 'sublistofrequest.academic');
+Route::view('/athletic', 'sublistofrequest.athletic');
+Route::view('/absence', 'sublistofrequest.absence');
+Route::view('/tor', 'sublistofrequest.tor');
+
