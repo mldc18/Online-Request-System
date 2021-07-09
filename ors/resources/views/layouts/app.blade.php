@@ -24,7 +24,7 @@
 
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper text-primary mb-3">Online Request System</span>
-    <span class="site-heading-lower">{{ $title }}</span>
+    <span class="site-heading-lower">{{ $title ?? 'Login' }}</span>
   </h1>
 
   <!-- Navigation -->
@@ -44,10 +44,10 @@
             <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded {{ (request()->is('/')) ? 'active' : '' }}" href="products.html">Request Form</a>
+            <a class="nav-link text-uppercase text-expanded {{ (request()->is('request')) ? 'active' : '' }}" href="/request">Request Form</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded {{ (request()->is('/store')) ? 'active' : '' }}" href="store.html">FAQS</a>
+            <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
           </li>
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
             <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>

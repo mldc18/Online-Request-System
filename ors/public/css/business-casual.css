@@ -50,8 +50,7 @@ p {
 }
 
 .page-section {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  /* margin: 10; */
 }
 
 .section-heading {
@@ -145,7 +144,6 @@ p {
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: rgba(230, 167, 86, 0.9);
 }
 
 .cta .cta-inner {

@@ -20,14 +20,19 @@ Route::get('/', function () {
     return view('home', ['title' => 'HOME']);
 });
 
+Route::get('/listofrequest', [ListOfRequestController::class, 'index']);
 
-Route::get('/login', function () {
-    return view('auth.login', ['title' => 'LOGIN']);
-});
-Auth::routes();
+    // Route::get('/login', function () {
+    //     return view('auth.login', ['title' => 'LOGIN']);
+    // });
+    // Auth::routes();
+Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/rcvdrequest', function () {
+    return view('rcvdrequest', ['title' => 'HOME']);
+});
 
 Route::get('/request', [RequestController::class, 'index']);
 
