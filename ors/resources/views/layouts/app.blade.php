@@ -17,11 +17,10 @@
 
   <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
-
+  <link href="{{asset('css/home.css')}}" rel="stylesheet">
 </head>
 
 <body>
-
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper text-primary mb-3">Online Request System</span>
     <span class="site-heading-lower">{{ $title ?? 'Login' }}</span>
@@ -50,7 +49,7 @@
             <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
           </li>
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
+            <a class="nav-link text-uppercase text-expanded" href="/profile">DELA CRUZ - 1812903</a>
           </li>
         </ul>
       </div>
@@ -70,7 +69,17 @@
   <!-- Bootstrap core JavaScript -->
   <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
+  <script>
+    $('#status').change(function(){
+      if($('#status').val() == 'Denied'){
+        $('.requestmessage').html(`<div class="form-group">
+          <label for="exampleFormControlTextarea1">Reason for rejecting request</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button class="btn btn-sm btn-info">Save</button>`);
+      }
+    });
+  </script>
 </body>
 
 </html>

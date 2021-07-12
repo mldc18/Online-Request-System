@@ -53,13 +53,16 @@ ul{
             </a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/list">List of Request</a>
+            <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/products">Request Form</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/faqs">FAQS</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
           </li>
         </ul>
       </div>

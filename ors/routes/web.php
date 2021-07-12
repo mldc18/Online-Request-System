@@ -34,6 +34,18 @@ Route::get('/rcvdrequest', function () {
     return view('rcvdrequest', ['title' => 'HOME']);
 });
 
+Route::get('/academicform', function () {
+    return view('listrequestform.academicform');
+});
+
+Route::get('/openrequest', function () {
+    return view('openrequest', ['title' => 'Request Details']);
+});
+
+Route::get('/profile', function () {
+    return view('profile', ['title' => 'Profile']);
+});
+
 Route::get('/request', [RequestController::class, 'index']);
 
 Route::get('/faqs', [FaqsController::class, 'index']);
@@ -42,4 +54,6 @@ Route::view('/academic', 'sublistofrequest.academic');
 Route::view('/athletic', 'sublistofrequest.athletic');
 Route::view('/absence', 'sublistofrequest.absence');
 Route::view('/tor', 'sublistofrequest.tor');
+
+Route::view('/newpage' ,'newpage');
 
