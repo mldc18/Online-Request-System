@@ -38,7 +38,7 @@
     display: inline-block;
   }
   
-  input[type=submit] {
+  .submit-req {
     background-color: rgba(47,23,15,.9);
     color: white;
     padding: 12px 20px;
@@ -48,14 +48,20 @@
     float: right;
   }
   
-  input[type=submit]:hover {
+  .submit-req:hover {
     background-color: burlywood;
   }
   
   .containeer {
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
+    width: 750px;
+
+    /* padding: 60px 300px; */
+  }
+
+  form{
+    /* width: 500px; */
   }
   
   .col-25 {
@@ -116,12 +122,16 @@
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/faqs">FAQS</a>
           </li>
+          <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
+            <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <body>
+<<<<<<< HEAD
 
     <div class="containeer">
       <form action="/action_page.php">
@@ -181,11 +191,61 @@
         
         <div class="row">
           <input type="submit" value="Submit">
-        </div>
-      </form>
-    </div>
+=======
     
-    </body>
+    <center>
+      <div class="alert alert-danger w-50 mt-3 sent-success" style="display:none" role="alert">
+        Please login to your Account!
+      </div>
+      <div class="containeer mb-5 mt-3 py-4">
+        <div class="px-5">
+          <form action="/action_page.php">
+            <div class="row">
+              <div class="col-25">
+                <label for="fname">First Name</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="lname">Last Name</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="country">Campus</label>
+              </div>
+              <div class="col-75">
+                <select id="country" name="country">
+                  <option value="australia">Quezon City</option>
+                  <option value="canada">Manila</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="subject">Subject</label>
+              </div>
+              <div class="col-75">
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <input class="submit-req m-0 m-auto" type="button" value="Submit">
+            </div>
+          </form>
+>>>>>>> 5b2f0e2d5083c2bebb03d44c2c0121339507f313
+        </div>
+      </div>
+    </center>
+
+    
+  </body>
   <footer class="footer text-faded text-center py-5">
     <div class="container">
       <p class="m-0 small">Copyright &copy; ORS 2021</p>
@@ -195,7 +255,13 @@
   <!-- Bootstrap core JavaScript -->
   <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
+  <script>
+    $('.submit-req').on('click', function(){
+      $('.sent-success').show();
+      setTimeout(function() { $('.sent-success').hide(); }, 4000);
+      
+    });
+  </script>
 </body>
 
 

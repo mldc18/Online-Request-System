@@ -50,8 +50,7 @@ p {
 }
 
 .page-section {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  /* margin: 10; */
 }
 
 .section-heading {
@@ -72,6 +71,13 @@ p {
 
 .bg-faded {
   background-color: rgba(255, 255, 255, 0.85);
+}
+
+.containeer {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 750px;
 }
 
 #mainNav {
@@ -145,10 +151,9 @@ p {
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: rgba(230, 167, 86, 0.9);
 }
 
-.cta .cta-inner {
+/* .cta .cta-inner {
   position: relative;
   padding: 3rem;
   margin: 0.5rem;
@@ -164,7 +169,7 @@ p {
   left: -0.5rem;
   right: -0.5rem;
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
-}
+} */
 
 @media (min-width: 992px) {
   .about-heading .about-heading-img {
