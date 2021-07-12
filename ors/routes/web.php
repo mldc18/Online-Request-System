@@ -20,7 +20,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/faq', function () {
-    return view('faqspage');
-});
+Route::get('/listofrequest', [ListOfRequestController::class, 'index']);
 
+Route::get('/request', [RequestController::class, 'index']);
+
+Route::get('/faqs', [FaqsController::class, 'index']);
+
+Route::view('/academic', 'sublistofrequest.academic');
+Route::view('/athletic', 'sublistofrequest.athletic');
+Route::view('/absence', 'sublistofrequest.absence');
+Route::view('/tor', 'sublistofrequest.tor');
