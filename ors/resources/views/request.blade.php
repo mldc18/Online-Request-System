@@ -103,14 +103,14 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/">Home
+          <a class="nav-link text-uppercase text-expanded" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item px-lg-4">
+          <li class="nav-item active px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
-          <li class="nav-item active px-lg-4">
+          <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
           </li>
           <li class="nav-item px-lg-4">
@@ -127,40 +127,58 @@
       <form action="/action_page.php">
         <div class="row">
           <div class="col-25">
-            <label for="fname">First Name</label>
+            <label for="fname">Photocopy of last semester's GWA</label>
           </div>
           <div class="col-75">
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <form method="post" enctype="multipart/form-data">
+              <div>
+                <label for="file"></label>
+                <input type="file" id="file" name="file" multiple>
+              </div>
+             </form>
           </div>
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="lname">Last Name</label>
+            <label for="lname">Registration Form</label>
           </div>
           <div class="col-75">
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <form method="post" enctype="multipart/form-data">
+              <div>
+                <label for="file"></label>
+                <input type="file" id="file" name="file" multiple>
+              </div>
+             </form>
           </div>
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="country">Country</label>
+            <label for="country">TIP</label>
           </div>
           <div class="col-75">
             <select id="country" name="country">
-              <option value="australia">Australia</option>
-              <option value="canada">Canada</option>
-              <option value="usa">USA</option>
+              <option value="australia">Manila</option>
+              <option value="canada">Quezon City</option>
+              <option value="usa">P. Casal</option>
             </select>
           </div>
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="subject">Subject</label>
+            <label for="subject">2x2 ID Picture (2pcs)</label>
           </div>
           <div class="col-75">
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <form method="post" enctype="multipart/form-data">
+              <div>
+                <label for="file"></label>
+                <input type="file" id="file" name="file" multiple>
+              </div>
+             </form>
           </div>
         </div>
+
+        <hr class="new4">
+        
         <div class="row">
           <input type="submit" value="Submit">
         </div>
@@ -179,5 +197,6 @@
   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 </body>
+
 
 </html>

@@ -26,7 +26,7 @@ Route::get('/request', [RequestController::class, 'index']);
 
 Route::get('/faqs', [FaqsController::class, 'index']);
 
-Route::view('/academic', 'sublistofrequest.academic');
-Route::view('/athletic', 'sublistofrequest.athletic');
-Route::view('/absence', 'sublistofrequest.absence');
-Route::view('/tor', 'sublistofrequest.tor');
+Route::view('/academic', 'listofrequest.academic');
+Route::view('/athletic', 'listofrequest.athletic');
+Route::view('/absence', 'listofrequest.absence');
+Route::view('/tor', 'listofrequest.tor');

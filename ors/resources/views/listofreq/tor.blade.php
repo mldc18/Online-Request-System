@@ -7,7 +7,7 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
-  <title>Athletic Scholarship Grant</title>
+  <title>Transcript of Records</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -48,15 +48,15 @@ ul{
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/">Home
+            <a class="nav-link text-uppercase text-expanded" href="/index">Home</a>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/list">List of Request</a>
+            <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/products">Request Form</a>
+            <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/faqs">FAQS</a>
@@ -73,39 +73,21 @@ ul{
           <div class="col-xl-9 col-lg-10 mx-auto">
             <div class="bg-faded rounded p-5">
               <h2 class="section-heading mb-4">
-                <span class="section-heading-lower"><b>Athletic Scholarship Grant</b></span>
+                <span class="section-heading-lower"><b>Transcript of Records</b></span>
               </h2>
               <ul>
-             <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                 sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
+             <li><p>The Transcript of Records is a document you will need to present, as part of the application process at your future host
+                  university from abroad. If you will be part of an exchange programme, you will also need another official transcript of 
+                  records at the end of your study period, completed by the university where you attended courses.</p></li>
               </ul>
 
               <hr class="new4">
 
             <p><b>Student needs to present the following:</b></p>
               <ul>
-                <li><p>Photocopy of last semester's GWA</p></li>
-                <li><p>Registration Form</p></li>
-                <li><p>2x2 ID Picture (2pcs)</p></li>
-              </ul>
-              
-              <hr class="new4">
-
-              <p><b>President's List</b></p>
-              <ul>
-                <li><p>1.00 - 1.25 with no grade in any subject below 1.50 - 100% Discount on Tuition Fees for one (1) semester</p></li>
-              </ul>
-
-              <p><b>VPAA</b></p>
-              <ul>
-                <li><p>1.00 - 1.25 with no grade in any subject below 1.50 - 100% Discount on Tuition Fees for one (1) semester</p></li>
-              </ul>
-
-              <p><b>Dean's List</b></p>
-              <ul>
-                <li><p>1.00 - 1.25 with no grade in any subject below 1.50 - 100% Discount on Tuition Fees for one (1) semester</p></li>
+                <li><p>Two (2) valid Identification Card with picture and signature;</p></li>
+                <li><p>Two (2) pieces of 2x2 inch. ID picture (on white background; recent, not more than three months) of the requesting person;</p></li>
+                <li><p>Request letter coming from the School/University that requires you to submit Transcript of Records or Diploma or the school where you are admitted;</p></li>
               </ul>
 
             </div>
@@ -122,8 +104,8 @@ ul{
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 </body>
 
