@@ -53,13 +53,16 @@ ul{
             </a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/list">List of Request</a>
+            <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/faqs">FAQS</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
           </li>
         </ul>
       </div>
@@ -107,7 +110,8 @@ ul{
               <ul>
                 <li><p>1.51-1.75 with no grade in any subject below 2.50 - 50% Discount on Tuition Fees for one (1) semester</p></li>
               </ul>
-
+              <hr class="new4">
+              <center> <a class="btn btn-primary mt-3" href="/academicform">Make a Request</a> </center>
             </div>
           </div>
         </div>

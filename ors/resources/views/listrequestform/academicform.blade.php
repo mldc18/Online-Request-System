@@ -10,13 +10,12 @@
   <title>Request Form</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
-  <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
-  <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+  <link href="css/business-casual.min.css" rel="stylesheet">
   
 </head>
 
@@ -38,7 +37,7 @@
     display: inline-block;
   }
   
-  .submit-req {
+  input[type=submit] {
     background-color: rgba(47,23,15,.9);
     color: white;
     padding: 12px 20px;
@@ -48,20 +47,15 @@
     float: right;
   }
   
-  .submit-req:hover {
+  input[type=submit]:hover {
     background-color: burlywood;
   }
   
   .containeer {
     border-radius: 5px;
     background-color: #f2f2f2;
+    padding: 20px;
     width: 750px;
-
-    /* padding: 60px 300px; */
-  }
-
-  form{
-    /* width: 500px; */
   }
   
   .col-25 {
@@ -90,6 +84,10 @@
       margin-top: 0;
     }
   }
+
+  hr.new4 {
+  border: 1px solid burlywood;
+}
   </style>
 
 <body>
@@ -122,68 +120,70 @@
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/faqs">FAQS</a>
           </li>
-          <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
+          {{-- <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>
   </nav>
 
   <body>
-    
-    <center>
-      <div class="alert alert-danger w-50 mt-3 sent-success" style="display:none" role="alert">
-        Please login to your Account!
-      </div>
-      <div class="containeer mb-5 mt-3 py-4">
-        <div class="px-5">
-          <form action="/action_page.php">
-            <div class="row">
-              <div class="col-25">
-                <label for="fname">First Name</label>
-              </div>
-              <div class="col-75">
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
-              </div>
+      <center>
+        <div class="containeer mb-5 mt-3 py-4 text-left">
+            <div class="px-4">
+                <form action="/action_page.php">
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="fname">Photocopy of last semester's GWA</label>
+                      </div>
+                      <div class="col-75">
+                        <label for="file"></label>
+                        <input type="file" id="file" name="file" multiple>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="lname">Registration Form</label>
+                      </div>
+                      <div class="col-75">
+                        <label for="file"></label>
+                        <input type="file" id="file" name="file" multiple>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="country">TIP</label>
+                      </div>
+                      <div class="col-75">
+                        <select id="country" name="country">
+                          <option value="australia">Manila</option>
+                          <option value="canada">Quezon City</option>
+                          <option value="usa">P. Casal</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="subject">2x2 ID Picture (2pcs)</label>
+                      </div>
+                      <div class="col-75">
+                        <label for="file"></label>
+                        <input type="file" id="file" name="file" multiple>
+                      </div>
+                    </div>
+            
+                    <hr class="new4">
+                    
+                    <div class="row">
+                      <input type="submit" value="Submit">
+                    </div>
+                </form>
             </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="lname">Last Name</label>
-              </div>
-              <div class="col-75">
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="country">Campus</label>
-              </div>
-              <div class="col-75">
-                <select id="country" name="country">
-                  <option value="australia">Quezon City</option>
-                  <option value="canada">Manila</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="subject">Subject</label>
-              </div>
-              <div class="col-75">
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-              </div>
-            </div>
-            <div class="row mt-2">
-              <input class="submit-req m-0 m-auto" type="button" value="Submit">
-            </div>
-          </form>
         </div>
-      </div>
-    </center>
-
+      </center>
     
-  </body>
+    </body>
   <footer class="footer text-faded text-center py-5">
     <div class="container">
       <p class="m-0 small">Copyright &copy; ORS 2021</p>
@@ -191,15 +191,9 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script>
-    $('.submit-req').on('click', function(){
-      $('.sent-success').show();
-      setTimeout(function() { $('.sent-success').hide(); }, 4000);
-      
-    });
-  </script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -8,6 +8,6 @@ class ListOfRequestController extends Controller
 {
     public function index()
     {
-        return view('listofrequest');
+        return view('listofrequest', ['title'=>'List of Requests']);
     }
 }
