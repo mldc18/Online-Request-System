@@ -20,30 +20,10 @@
     <!-- Custom styles for this template -->
     <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+  <link href="{{asset('css/home.css')}}" rel="stylesheet">
+  <link href="{{asset('css/faqs.css')}}" rel="stylesheet">
 
   </head>
-
-  <style>
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid burlywood;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: burlywood;
-}
-    hr.new4 {
-  border: 1px solid burlywood;
-}
-    </style>
 
   <body>
 
@@ -83,9 +63,9 @@ tr:nth-child(even) {
       </div>
     </nav>
 
-    <section class="page-section cta">
+    <section class="pagee-section cta">
       <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/faqs.jpg" alt="">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="{{asset('image/faqs.jpg')}}" alt="">
         <div class="about-heading-content">
         <div class="row">
           <div class="col-xl-9 mx-auto">
@@ -99,8 +79,8 @@ tr:nth-child(even) {
                   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                 </tr>
                 <tr>
-                  <th>A:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <th class="ans">A:</th>
+                  <td class="ans">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                 </tr>
               </table>
 
@@ -112,8 +92,8 @@ tr:nth-child(even) {
                   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                 </tr>
                 <tr>
-                  <th>A:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <th class="ans">A:</th>
+                  <td class="ans">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                 </tr>
               </table>
 
@@ -125,8 +105,8 @@ tr:nth-child(even) {
                   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                 </tr>
                 <tr>
-                  <th>A:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <th class="ans">A:</th>
+                  <td class="ans">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                 </tr>
               </table>
             </div>
