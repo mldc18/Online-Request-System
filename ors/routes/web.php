@@ -50,10 +50,10 @@ Route::get('/request', [RequestController::class, 'index']);
 
 Route::get('/faqs', [FaqsController::class, 'index']);
 
-Route::view('/academic', 'sublistofrequest.academic');
-Route::view('/athletic', 'sublistofrequest.athletic');
-Route::view('/absence', 'sublistofrequest.absence');
-Route::view('/tor', 'sublistofrequest.tor');
+Route::view('/academic', 'listofreq.academic');
+Route::view('/athletic', 'listofreq.athletic');
+Route::view('/absence', 'listofreq.absence');
+Route::view('/tor', 'listofreq.tor');
 
 Route::view('/newpage' ,'newpage');
 
