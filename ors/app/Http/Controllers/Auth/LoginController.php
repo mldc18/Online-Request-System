@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Redirect;
 
 class LoginController extends Controller
 {
@@ -36,5 +40,16 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request){
+        $user = User::where('email', $request->input('email'))
+                    ->where('password', $request->input('password'))->first();
+        if($user){
+            $user_name = 'DELACRUZ-1812903';
+            return view('home', ['title'=>'HOME', 'user_name'=>$user_name]);
+        }else{
+            dd('wtf');
+        }
     }
 }

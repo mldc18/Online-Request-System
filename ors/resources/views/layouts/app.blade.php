@@ -49,7 +49,7 @@
             <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
           </li>
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="/profile">DELA CRUZ - 1812903</a>
+            <a class="nav-link text-uppercase text-expanded" href="/login">{{ $user_name ?? 'Login' }}</a>
           </li>
         </ul>
       </div>
