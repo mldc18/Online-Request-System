@@ -17,6 +17,8 @@
 
   <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+  <link href="{{asset('css/academic.css')}}" rel="stylesheet">
+  <link href="{{asset('css/home.css')}}" rel="stylesheet">
   
 </head>
 <style>
@@ -69,7 +71,7 @@ ul{
     </div>
   </nav>
 
-  <section class="page-section about-heading">
+  <section class="pagee-section about-heading">
     <div class="container">
       <div class="about-heading-content">
         <div class="row">

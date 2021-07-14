@@ -20,6 +20,7 @@
     <!-- Custom styles for this template -->
     <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+  <link href="{{asset('css/home.css')}}" rel="stylesheet">
 
   </head>
 
