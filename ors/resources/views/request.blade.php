@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+<<<<<<< HEAD
 @section('content')
 
 <style>
@@ -75,6 +76,65 @@
   </style>
 
 
+=======
+<head>
+
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+  <title>Request Form</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+  <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
+  <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+  <link href="{{asset('css/home.css')}}" rel="stylesheet">
+  <link href="{{asset('css/request.css')}}" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  <h1 class="site-heading text-center text-white d-none d-lg-block">
+    <span class="site-heading-upper text-primary mb-3">Online Request System</span>
+    <span class="site-heading-lower">Request Form</span>
+  </h1>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.html"><img src="img/logo homee.png" class="site_logo" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
+          </li>
+          <li class="nav-item active px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
+          </li>
+          <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
+            <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <body>
+>>>>>>> 19bf5b7f8d5ad008a2019162ea41d3b70987b6b6
     
     <center>
       <div class="alert alert-danger w-50 mt-3 sent-success" style="display:none" role="alert">
