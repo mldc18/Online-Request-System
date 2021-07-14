@@ -51,9 +51,16 @@
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
           </li>
+          @guest
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="/login">{{ $user_name ?? 'Login' }}</a>
+            <a class="nav-link text-uppercase text-expanded" href="{{ route('login') }}">{{ $user_name ?? 'Login' }}</a>
           </li>
+          @else
+          <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="/rcvdrequest">{{ auth()->user()->name }}</a></li>
+          <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="{{ route('logout') }}">
+            {{ __('logout') }}
+          </a></li>
+          @endguest
         </ul>
       </div>
     </div>

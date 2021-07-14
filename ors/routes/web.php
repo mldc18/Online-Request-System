@@ -21,13 +21,13 @@ Route::get('/', function () {
 });
 
 Route::get('/listofrequest', [ListOfRequestController::class, 'index']);
-
+Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logout']);
     // Route::get('/login', function () {
     //     return view('auth.login', ['title' => 'LOGIN']);
     // });
     // Auth::routes();
-Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+// Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+// Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/rcvdrequest', function () {
@@ -50,10 +50,14 @@ Route::get('/request', [RequestController::class, 'index']);
 
 Route::get('/faqs', [FaqsController::class, 'index']);
 
-Route::view('/academic', 'sublistofrequest.academic');
-Route::view('/athletic', 'sublistofrequest.athletic');
-Route::view('/absence', 'sublistofrequest.absence');
-Route::view('/tor', 'sublistofrequest.tor');
+Route::view('/academic', 'listofreq.academic');
+Route::view('/athletic', 'listofreq.athletic');
+Route::view('/absence', 'listofreq.absence');
+Route::view('/tor', 'listofreq.tor');
 
 Route::view('/newpage' ,'newpage');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
