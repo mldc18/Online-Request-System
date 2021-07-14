@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <section class="pagee-section cta">
       <div class="container">
         <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="{{asset('image/faqs.jpg')}}" alt="">
@@ -55,5 +54,4 @@
       </div>
     </section>
 
-   
 @endsection

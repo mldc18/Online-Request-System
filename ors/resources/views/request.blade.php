@@ -73,8 +73,6 @@
     }
   }
   </style>
-
-
     
     <center>
       <div class="alert alert-danger w-50 mt-3 sent-success" style="display:none" role="alert">
@@ -126,8 +124,6 @@
       </div>
     </center>
 
-    
-  </body>
   <script>
     $('.submit-req').on('click', function(){
       $('.sent-success').show();

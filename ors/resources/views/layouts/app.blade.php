@@ -46,9 +46,6 @@
             <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded {{ (request()->is('request')) ? 'active' : '' }}" href="/request">Request Form</a>
-          </li>
-          <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
           </li>
           @guest
