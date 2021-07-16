@@ -114,7 +114,7 @@
                     3. Choose from the list of documents for the documents you need </td>
                 </tr>
               </table>
-              <form>
+               <form action="" method=""> {{-- dito niyo lagay pakyu --}}
                 <div class="container-for-questions" style="padding-top: 50px;">
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Email address</label>
