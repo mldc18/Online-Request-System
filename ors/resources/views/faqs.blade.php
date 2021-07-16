@@ -20,30 +20,10 @@
     <!-- Custom styles for this template -->
     <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+  <link href="{{asset('css/home.css')}}" rel="stylesheet">
+  <link href="{{asset('css/faqs.css')}}" rel="stylesheet">
 
   </head>
-
-  <style>
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid burlywood;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: burlywood;
-}
-    hr.new4 {
-  border: 1px solid burlywood;
-}
-    </style>
 
   <body>
 
@@ -69,9 +49,6 @@ tr:nth-child(even) {
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
-            </li>
             <li class="nav-item active px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="/">FAQS</a>
             </li>
@@ -83,9 +60,9 @@ tr:nth-child(even) {
       </div>
     </nav>
 
-    <section class="page-section cta">
+    <section class="pagee-section cta">
       <div class="container">
-        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/faqs.jpg" alt="">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="{{asset('image/faqs.jpg')}}" alt="">
         <div class="about-heading-content">
         <div class="row">
           <div class="col-xl-9 mx-auto">
@@ -96,11 +73,13 @@ tr:nth-child(even) {
               <table>
                 <tr>
                   <th>Q:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <td>Who are eligible to use this system? </td>
                 </tr>
                 <tr>
-                  <th>A:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <th class="ans">A:</th>
+                  <td class="ans">1. Currently Enrolled Student <br>
+                    2. Transferee <br>
+                    3. Alumni </td>
                 </tr>
               </table>
 
@@ -109,11 +88,15 @@ tr:nth-child(even) {
               <table>
                 <tr>
                   <th>Q:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <td>What are the things we can do in this system? </td>
                 </tr>
                 <tr>
-                  <th>A:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <th class="ans">A:</th>
+                  <td class="ans">1. Documents requests <br>
+                    2. Scholarship Applications <br>
+                    3. Course Accreditations <br>
+                    4. Leave of Absence Applications <br>
+                    5. Returning Student Admissions </td>
                 </tr>
               </table>
 
@@ -122,19 +105,36 @@ tr:nth-child(even) {
               <table>
                 <tr>
                   <th>Q:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <td>How can I make a request for the document I needed? </td>
                 </tr>
                 <tr>
-                  <th>A:</th>
-                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                  <th class="ans">A:</th>
+                  <td class="ans">1. Register by clicking the "Request Today" button <br>
+                    2. Click the "Request Form" then fill up the necessary information <br>
+                    3. Choose from the list of documents for the documents you need </td>
                 </tr>
               </table>
+              <form>
+                <div class="container-for-questions" style="padding-top: 50px;">
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input onkeyup="emailValid()" type="email" class="form-control" id="exampleFormControlInput1" placeholder="JuanDelaCruz@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Other questions?</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                    <input class="btn btn-red w-100" type="submit" value="Submit">
+                </div>
+              </form>
             </div>
           </div>
           </div>
         </div>
       </div>
     </section>
+
+    
 
    
     <footer class="footer text-faded text-center py-5">
@@ -146,6 +146,7 @@ tr:nth-child(even) {
     <!-- Bootstrap core JavaScript -->
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('js/faqs.js')}}"></script>
 
   </body>
 

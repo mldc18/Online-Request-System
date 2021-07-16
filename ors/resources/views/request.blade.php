@@ -17,80 +17,10 @@
 
   <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+  <link href="{{asset('css/home.css')}}" rel="stylesheet">
+  <link href="{{asset('css/request.css')}}" rel="stylesheet">
   
 </head>
-
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  
-  input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-  }
-  
-  label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-  }
-  
-  .submit-req {
-    background-color: rgba(47,23,15,.9);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-  }
-  
-  .submit-req:hover {
-    background-color: burlywood;
-  }
-  
-  .containeer {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    width: 750px;
-
-    /* padding: 60px 300px; */
-  }
-
-  form{
-    /* width: 500px; */
-  }
-  
-  .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-  }
-  
-  .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
-    }
-  }
-  </style>
 
 <body>
 
@@ -118,9 +48,6 @@
           </li>
           <li class="nav-item active px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/faqs">FAQS</a>
           </li>
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
             <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>

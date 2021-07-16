@@ -17,6 +17,8 @@
 
   <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+  <link href="{{asset('css/academic.css')}}" rel="stylesheet">
+  <link href="{{asset('css/home.css')}}" rel="stylesheet">
   
 </head>
 <style>
@@ -48,15 +50,12 @@ ul{
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/index">Home</a>
+            <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/faqs">FAQS</a>
@@ -69,7 +68,7 @@ ul{
     </div>
   </nav>
 
-  <section class="page-section about-heading">
+  <section class="pagee-section about-heading">
     <div class="container">
       <div class="about-heading-content">
         <div class="row">
