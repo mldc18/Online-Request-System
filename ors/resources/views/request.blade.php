@@ -42,6 +42,7 @@
     /* padding: 60px 300px; */
   }
 
+<<<<<<< HEAD
   form{
     /* width: 500px; */
   }
@@ -73,6 +74,42 @@
     }
   }
   </style>
+=======
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.html"><img src="img/logo homee.png" class="site_logo" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
+          </li>
+          <li class="nav-item active px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
+
+            <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
+          </li>
+
+          </li>
+          <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
+            <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <body>
+>>>>>>> 258c0a0579f6e3d9e6a1da6770f05c9f983ed904
     
     <center>
       <div class="alert alert-danger w-50 mt-3 sent-success" style="display:none" role="alert">

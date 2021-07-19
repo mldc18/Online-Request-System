@@ -21,6 +21,9 @@
   <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
   <link href="{{asset('css/home.css')}}" rel="stylesheet">
+  <link href="{{asset('css/profile.css')}}" rel="stylesheet">
+  <link href="{{asset('css/request.css')}}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -32,7 +35,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.html"><img src="{{asset('image/logo_homee.png')}}" class="site_logo" alt=""></a>
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="/"><img src="{{asset('image/logo_homee.png')}}" class="site_logo" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,6 +48,11 @@
           <li class="nav-item px-lg-4 {{ request()->is('listofrequest') ? 'active' : '' }}">
             <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
+
+          <li class="nav-item px-lg-4 {{ request()->is('request') ? 'active' : '' }}">
+            <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
+          </li>
+
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
           </li>
