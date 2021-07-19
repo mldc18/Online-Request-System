@@ -86,7 +86,7 @@ p {
 }
 
 #mainNav .navbar-brand {
-  color: red;
+  color: rgba(242, 120, 75, 1);
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -95,7 +95,7 @@ p {
 }
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
-  color: red;
+  color: rgba(242, 120, 75, 1);
 }
 
 @media (min-width: 992px) {
@@ -106,7 +106,7 @@ p {
     color: rgba(255, 255, 255, 0.4);
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: red;
+    color: rgba(242, 120, 75, 1);
   }
 }
 
@@ -215,7 +215,7 @@ p {
 
 .list-hours .list-hours-item.today {
   font-weight: bold;
-  color: red;
+  color: rgba(242, 120, 75, 1);
 }
 
 @media (min-width: 992px) {
@@ -234,11 +234,11 @@ p {
 }
 
 .text-primary {
-  color: red !important;
+  color: rgba(242, 120, 75, 1) !important;
 }
 
 .bg-primary {
-  background-color: red !important;
+  background-color: rgba(242, 120, 75, 1) !important;
 }
 
 .btn {
@@ -246,8 +246,8 @@ p {
 }
 
 .btn-primary {
-  background-color: red;
-  border-color: red;
+  background-color: rgba(242, 120, 75, 1);
+  border-color: rgba(242, 120, 75, 1);
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {

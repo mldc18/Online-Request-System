@@ -48,6 +48,11 @@
           </li>
           <li class="nav-item active px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
+
+            <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
+          </li>
+
           </li>
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
             <a class="nav-link text-uppercase text-expanded" href="/login">Login</a>

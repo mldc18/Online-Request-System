@@ -16,7 +16,7 @@
   }
   
   .submit-req {
-    background-color: red;
+    background-color: rgba(242, 120, 75, 1);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -38,7 +38,7 @@
   }
 
   form{
-    /* width: 500px; */
+     width: 500px; 
   }
   
   .col-25 {
