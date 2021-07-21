@@ -42,26 +42,35 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item px-lg-4 {{ request()->is('/') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="/">Home
-            </a>
+            @if(Auth::check())
+              @if(auth()->user()->user_type == 'student')
+                <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
+              @else
+                <a class="nav-link text-uppercase text-expanded" href="/clerk">Home</a>
+              @endif
+            @else
+              <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
+            @endif
           </li>
           <li class="nav-item px-lg-4 {{ request()->is('listofrequest') ? 'active' : '' }}">
             <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
-
-          <li class="nav-item px-lg-4 {{ request()->is('request') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
-          </li>
-
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
           </li>
+          
+
           @guest
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="{{ route('login') }}">{{ $user_name ?? 'Login' }}</a>
+            <a class="nav-link text-uppercase text-expanded" href="{{ route('login') }}">{{ 'Login' }}</a>
           </li>
           @else
-          <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="/rcvdrequest">{{ auth()->user()->name }}</a></li>
+            @if(auth()->user()->user_type == 'student')
+            <li class="nav-item px-lg-4 {{ request()->is('request') ? 'active' : '' }}">
+              <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
+            </li> 
+            @endif
+          <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="/profile">{{ auth()->user()->name }}</a></li>
           <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="{{ route('logout') }}">
             {{ __('logout') }}
           </a></li>

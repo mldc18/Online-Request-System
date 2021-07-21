@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ListOfRequestController;
+use App\Http\Controllers\ClerkController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,22 +24,18 @@ Route::get('/', function () {
 
 Route::get('/listofrequest', [ListOfRequestController::class, 'index']);
 Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logout']);
-    // Route::get('/login', function () {
-    //     return view('auth.login', ['title' => 'LOGIN']);
-    // });
-    // Auth::routes();
-// Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
-// Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+
+Auth::routes();
+
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'processLogin']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/rcvdrequest', function () {
-    return view('rcvdrequest', ['title' => 'HOME']);
-});
+Route::get('/clerk', [ClerkController::class, 'index'])->name('clerk');
 
 Route::get('/academicform', function () {
     return view('listrequestform.academicform');
 });
-
 Route::get('/openrequest', function () {
     return view('openrequest', ['title' => 'Request Details']);
 });
@@ -47,17 +45,13 @@ Route::get('/profile', function () {
 });
 
 Route::get('/request', [RequestController::class, 'index']);
-
+Route::post('/academicform-upload', [ FileUploadController::class, 'academicform']);
 Route::get('/faqs', [FaqsController::class, 'index']);
 
-Route::view('/academic', 'listofreq.academic');
-Route::view('/athletic', 'listofreq.athletic');
-Route::view('/absence', 'listofreq.absence');
-Route::view('/tor', 'listofreq.tor');
+Route::view('/academic', 'sublistofrequest.academic');
+Route::view('/athletic', 'sublistofrequest.athletic');
+Route::view('/absence', 'sublistofrequest.absence');
+Route::view('/tor', 'sublistofrequest.tor');
 
 Route::view('/newpage' ,'newpage');
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

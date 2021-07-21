@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class ClerkController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('rcvdrequest', ['title'=>'List of Requests']);
+        return view('rcvdrequest', ['title'=>'HOME']);
     }
 }
