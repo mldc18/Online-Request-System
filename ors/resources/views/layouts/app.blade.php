@@ -21,6 +21,10 @@
   <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
   <link href="{{asset('css/home.css')}}" rel="stylesheet">
+  <link href="{{asset('css/profile.css')}}" rel="stylesheet">
+  <link href="{{asset('css/request.css')}}" rel="stylesheet">
+  <link href="{{asset('css/faqs.css')}}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -32,15 +36,22 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="index.html"><img src="{{asset('image/logo_homee.png')}}" class="site_logo" alt=""></a>
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="/"><img src="{{asset('image/logo_homee.png')}}" class="site_logo" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item px-lg-4 {{ request()->is('/') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="/">Home
-            </a>
+            @if(Auth::check())
+              @if(auth()->user()->user_type == 'student')
+                <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
+              @else
+                <a class="nav-link text-uppercase text-expanded" href="/clerk">Home</a>
+              @endif
+            @else
+              <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
+            @endif
           </li>
           <li class="nav-item px-lg-4 {{ request()->is('listofrequest') ? 'active' : '' }}">
             <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
@@ -48,9 +59,23 @@
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
           </li>
+          
+
+          @guest
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="/profile">DELA CRUZ - 1812903</a>
+            <a class="nav-link text-uppercase text-expanded" href="{{ route('login') }}">{{ 'Login' }}</a>
           </li>
+          @else
+            @if(auth()->user()->user_type == 'student')
+            <li class="nav-item px-lg-4 {{ request()->is('request') ? 'active' : '' }}">
+              <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
+            </li> 
+            @endif
+          <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="/profile">{{ auth()->user()->name }}</a></li>
+          <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="{{ route('logout') }}">
+            {{ __('logout') }}
+          </a></li>
+          @endguest
         </ul>
       </div>
     </div>
