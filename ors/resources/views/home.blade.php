@@ -12,7 +12,7 @@
           </h2>
           <p class="mb-3">Submit your documents & requirements at the comfort of your own home</p>
           <div class="intro-button mx-auto">
-            <a class="btn btn-primary btn-xl" href="/listofrequest">Request Today!</a>
+            <a class="btn btn-primary btn-xl" href="/test">Request Today!</a>
           </div>
         </div>
       </div>

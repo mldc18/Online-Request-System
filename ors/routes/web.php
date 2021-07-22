@@ -57,3 +57,5 @@ Route::view('/tor', 'listofreq.tor');
 
 Route::view('/newpage' ,'newpage');
 
+Route::view('/test', 'test');
+
