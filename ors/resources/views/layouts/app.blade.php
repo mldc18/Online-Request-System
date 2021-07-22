@@ -69,8 +69,10 @@
             <li class="nav-item px-lg-4 {{ request()->is('request') ? 'active' : '' }}">
               <a class="nav-link text-uppercase text-expanded" href="/request">Request Form</a>
             </li> 
-            @endif
-          <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="/profile">{{ auth()->user()->name }}</a></li>
+            <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="/profile/{{ auth()->user()->id }}/">{{ auth()->user()->name }}</a></li>
+            @else
+            <li class="nav-item px-lg-4"><p class="nav-link text-uppercase text-expanded">{{ auth()->user()->name }}</p></li>
+          @endif
           <li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded" href="{{ route('logout') }}">
             {{ __('logout') }}
           </a></li>
@@ -93,6 +95,8 @@
   <!-- Bootstrap core JavaScript -->
   <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
   <script>
     $('#status').change(function(){
       if($('#status').val() == 'Denied'){

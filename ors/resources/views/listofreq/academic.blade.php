@@ -55,7 +55,13 @@ ul{
                 <li><p>1.51-1.75 with no grade in any subject below 2.50 - 50% Discount on Tuition Fees for one (1) semester</p></li>
               </ul>
               <hr class="new4">
-              <center> <a class="btn btn-primary mt-3" href="/academicform">Make a Request</a> </center>
+              @if(Auth::check())
+                @if(auth()->user()->user_type == 'student')
+                  <center> <a class="btn btn-primary mt-3" href="/academicform">Make a Request</a></center>
+                @else
+                  <center> <a class="btn btn-primary mt-3" href="/academicform">Edit Request</a></center>
+                @endif
+              @endif
             </div>
           </div>
         </div>
