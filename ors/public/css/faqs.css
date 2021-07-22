@@ -12,6 +12,10 @@ table {
     text-align: left;
     padding: 8px;
   }
+
+  td {
+    text-align: justify !important;
+  }
   
   tr:nth-child(even) {
     background-color: #2c2c2c;
@@ -23,3 +27,30 @@ table {
   .ans{
       color: white
   }
+
+.container-for-questions {
+  font-family: arial, sans-serif;
+  background-color: #2c2c2c;
+  color: white;
+  padding: 30px;
+  margin-top: 10px;
+  text-align: left;
+  width: 720px;
+}
+
+.container-for-questions .btn-red:hover {
+  background-color: rgba(242, 120, 75, 1);
+  color: white;
+}
+
+.container-for-questions .btn-red {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .container-for-questions, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}

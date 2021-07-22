@@ -46,6 +46,11 @@ Route::view('/academic', 'listofreq.academic');
 Route::view('/athletic', 'listofreq.athletic');
 Route::view('/absence', 'listofreq.absence');
 Route::view('/tor', 'listofreq.tor');
+<<<<<<< HEAD
+=======
+Route::view('/goodmoral', 'listofreq.goodmoral');
+Route::view('/returnstudent', 'listofreq.returnstudent');
+>>>>>>> 152e3274035fd3244be23360392871fd474f1f0d
 
 Route::view('/newpage' ,'newpage');
 

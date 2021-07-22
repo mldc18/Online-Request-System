@@ -23,10 +23,9 @@ ul{
                 <span class="section-heading-lower"><b>Athletic Scholarship Grant</b></span>
               </h2>
               <ul>
-             <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                 sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
+             <li><p>Athletes or varsity players may enjoy full or partial tuition and/
+              or fees waiver. Grantees are recommended by the Office of Sports
+              Development (OSD).</p></li>
               </ul>
 
               <hr class="new4">
@@ -40,19 +39,12 @@ ul{
               
               <hr class="new4">
 
-              <p><b>President's List</b></p>
+              <p><b>Eligibility</b></p>
               <ul>
-                <li><p>1.00 - 1.25 with no grade in any subject below 1.50 - 100% Discount on Tuition Fees for one (1) semester</p></li>
-              </ul>
-
-              <p><b>VPAA</b></p>
-              <ul>
-                <li><p>1.00 - 1.25 with no grade in any subject below 1.50 - 100% Discount on Tuition Fees for one (1) semester</p></li>
-              </ul>
-
-              <p><b>Dean's List</b></p>
-              <ul>
-                <li><p>1.00 - 1.25 with no grade in any subject below 1.50 - 100% Discount on Tuition Fees for one (1) semester</p></li>
+                <li><p>Must pass a try-out </p></li>
+                <li><p>Should regularly compete in national meets;</p></li>
+                <li><p>Skill level - exemplary, consistent top 3 in nationally
+                  recognized competitions for individual events.</p></li>
               </ul>
 
             </div>

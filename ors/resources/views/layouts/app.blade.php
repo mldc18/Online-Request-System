@@ -23,6 +23,7 @@
   <link href="{{asset('css/home.css')}}" rel="stylesheet">
   <link href="{{asset('css/profile.css')}}" rel="stylesheet">
   <link href="{{asset('css/request.css')}}" rel="stylesheet">
+  <link href="{{asset('css/faqs.css')}}" rel="stylesheet">
 
 </head>
 
