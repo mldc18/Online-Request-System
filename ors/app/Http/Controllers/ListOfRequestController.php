@@ -14,7 +14,7 @@ class ListOfRequestController extends Controller
     }
 
     public function openAcademicForm(){
-        return view('listrequestform.academicform', ['title'=>'ACADEMIC FORM']);
+        return view('listrequestform_1.academicrequestform', ['title'=>'ACADEMIC FORM']);
     }
 
     public function submitAcademicForm(Request $request){

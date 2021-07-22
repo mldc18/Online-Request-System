@@ -49,9 +49,16 @@ Route::view('/tor', 'listofreq.tor');
 
 Route::view('/newpage' ,'newpage');
 
-// LIST OF REQUEST FORMS
+// LIST OF REQUEST FORMS 1
 Route::get('/academicform', [ListOfRequestController::class, 'openAcademicForm']);
 Route::post('/submitAcademicForm', [ListOfRequestController::class, 'submitAcademicForm']);
+
+
+// LIST OF REQUEST FORMS 2
+
+
+Route::view('/test', 'test');
+
 
 // CLERK ROUTES
 Route::get('/clerk', [ClerkController::class, 'index'])->name('clerk');

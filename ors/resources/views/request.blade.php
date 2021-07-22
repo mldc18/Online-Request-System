@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-
-<style>
+  <style>
+      .hidden {
+  display: none;
+}
   * {
     box-sizing: border-box;
   }
@@ -20,8 +22,8 @@
     display: inline-block;
   }
   
-  .submit-req {
-    background-color: rgba(47,23,15,.9);
+  input[type=submit] {
+    background-color: red;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -30,20 +32,15 @@
     float: right;
   }
   
-  .submit-req:hover {
-    background-color: burlywood;
+  input[type=submit]:hover {
+    background-color: #2c2c2c;
   }
   
   .containeer {
     border-radius: 5px;
-    background-color: #f2f2f2;
-    width: 750px;
-
-    /* padding: 60px 300px; */
-  }
-
-  form{
-    /* width: 500px; */
+    background-color: #dcdcdc;
+    padding: 20px;
+    
   }
   
   .col-25 {
@@ -72,65 +69,44 @@
       margin-top: 0;
     }
   }
+  hr.new4 {
+  border: 1px solid red;
+}
   </style>
-    
-    <center>
-      <div class="alert alert-danger w-50 mt-3 sent-success" style="display:none" role="alert">
-        Please login to your Account!
-      </div>
-      <div class="containeer mb-5 mt-3 py-4">
-        <div class="px-5">
-          <form action="/action_page.php">
-            <div class="row">
-              <div class="col-25">
-                <label for="fname">First Name</label>
-              </div>
-              <div class="col-75">
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="lname">Last Name</label>
-              </div>
-              <div class="col-75">
-                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="country">Campus</label>
-              </div>
-              <div class="col-75">
-                <select id="country" name="country">
-                  <option value="australia">Quezon City</option>
-                  <option value="canada">Manila</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label for="subject">Subject</label>
-              </div>
-              <div class="col-75">
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-              </div>
-            </div>
-            <div class="row mt-2">
-              <input class="submit-req m-0 m-auto" type="button" value="Submit">
-            </div>
-          </form>
-        </div>
-      </div>
-    </center>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-  <script>
-    $('.submit-req').on('click', function(){
-      $('.sent-success').show();
-      setTimeout(function() { $('.sent-success').hide(); }, 4000);
-      
-    });
-  </script>
-  @endsection
+<center>
+  <select id="demo-select" class="w-50">
+    <option value="selectForm1">Academic Scholarship</option>
+    <option value="selectForm2">Athletic Scholarship</option>
+  </select>
+  <form action="#" method="post" id="form1" class="hidden">
+        @include('listrequestform_2.academicrequestform')
+  </form>
+  <form action="#" method="post" id="form2" class="hidden">
+        @include('listrequestform_2.athleticrequestform')
+  </form>
+</center>
 
-
+  
+<script>
+    function showCorrectForm(demoSelectValue) {
+  if (demoSelectValue == "selectForm1"){
+    $('#form2').addClass('hidden');
+    $('#form1').removeClass('hidden');
+  } else if(demoSelectValue == "selectForm2"){
+    $('#form1').addClass('hidden');
+    $('#form2').removeClass('hidden');
+  }
+}
+// activate pagka load ng page
+$(document).ready(function(){
+  let currentForm = $('#demo-select').val();
+  showCorrectForm(currentForm);
+});
+//activate pagka palit ng select
+$('#demo-select').off('change').on('change', function(){
+  showCorrectForm($(this).val());
+});
+</script>
+@endsection
