@@ -10,7 +10,7 @@
   <title>Online Request System</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
@@ -18,12 +18,12 @@
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 
-  <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
-  <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
-  <link href="{{asset('css/home.css')}}" rel="stylesheet">
-  <link href="{{asset('css/profile.css')}}" rel="stylesheet">
-  <link href="{{asset('css/request.css')}}" rel="stylesheet">
-  <link href="{{asset('css/faqs.css')}}" rel="stylesheet">
+  <link href="/css/business-casual.min.css" rel="stylesheet">
+  <link href="/css/business-casual.css" rel="stylesheet">
+  <link href="/css/home.css" rel="stylesheet">
+  <link href="/css/profile.css" rel="stylesheet">
+  <link href="/css/request.css" rel="stylesheet">
+  <link href="/css/faqs.css" rel="stylesheet">
 
   <style>
     .bg-faded{
