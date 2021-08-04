@@ -7,7 +7,7 @@
               </div>
               <div class="col-75">
                 <label for="file"></label>
-                <input type="file" id="file" name="file" multiple>
+                <input type="file" name="gwa" multiple>
               </div>
             </div>
             <div class="row">
@@ -16,7 +16,7 @@
               </div>
               <div class="col-75">
                 <label for="file"></label>
-                <input type="file" id="file" name="file" multiple>
+                <input type="file" name="reg" multiple>
               </div>
             </div>
             <div class="row">
@@ -24,12 +24,13 @@
                 <label for="country">TIP</label>
               </div>
               <div class="col-75">
-                <select id="country" name="country">
+                <select id="country" name="campus">
                   <option value="australia">Manila</option>
                   <option value="canada">Quezon City</option>
                   <option value="usa">P. Casal</option>
                 </select>
               </div>
+              <input type="text" value="{{ auth()->user()->id }}" name="student_id" hidden>
             </div>
             </div>
             <hr class="new4">

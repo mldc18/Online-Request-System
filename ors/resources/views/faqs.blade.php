@@ -55,19 +55,28 @@
                     - Choose from the list of documents for the documents you need </td>
                 </tr>
               </table>
-               <form action="" method=""> {{-- dito niyo lagay pakyu --}}
+              @if(Auth::check())
+               <form action="#" id="faqs-form" method="POST"> {{-- dito niyo lagay pakyu --}}
+                 @csrf
                 <div class="container-for-questions" style="padding-top: 50px;">
+                  <div class="alert alert-success w-75 m-0 m-auto" style="display:none" id="success-email" role="alert">
+                    Your concern was successfully delivered!
+                  </div>
+                  <div class="alert alert-danger w-75 m-0 m-auto" style="display:none" id="danger-email" role="alert">
+                    There was a problem upon sending your concern
+                  </div>
                   <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input onkeyup="emailValid()" type="email" class="form-control" id="exampleFormControlInput1" placeholder="JuanDelaCruz@example.com">
+                    <label for="exampleFormControlInput1">Subject</label>
+                    <input type="text" class="form-control" name="subject-faqs" id="subject-faqs" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Other questions?</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" name="content-faqs" id="content-faqs" rows="3" required></textarea>
                   </div>
                     <input class="btn btn-red w-100" type="submit" value="Submit">
                 </div>
               </form>
+              @endif
             </div>
           </div>
           </div>
@@ -81,8 +90,7 @@
    
     
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('js/faqs.js')}}"></script>
 
@@ -92,7 +100,32 @@
   <script>
     $('.list-hours li').eq(new Date().getDay()).addClass('today');
   </script>
+  <script>
+    $('#faqs-form').on('submit', function(e){
+      var request_id = $('#request_id_val').val();
+      e.preventDefault();
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+          }
+      });
+      var formData = new FormData(this);
+      $.ajax({
+          type: 'POST',
+          url: '/send-mail',
+          data: formData,
+          cache: false,
+          contentType: false,
+          processData: false,
+          success: function(data) {
+              console.log(data);
+              $('#success-email').show();
+              $("#success-email").delay(3200).fadeOut(300);
+          },
 
+      });
+    }); 
+  </script>
 </html>
 
 @endsection

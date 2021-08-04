@@ -34,16 +34,43 @@
         </div>
     </div>
   </div>
-
+  <div class="modal" id="attachments-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Documents</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="attachments-body">
+            
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert alert-success w-50 m-0 m-auto" style="display:none" id="success" role="alert">
+    Successfully changed status of Request
+  </div>
+  <div class="alert alert-danger w-50 m-0 m-auto" style="display:none" id="danger" role="alert">
+    There was a problem upon updating status of Request
+  </div>
   <section class="page-section cta m-0">
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
           <div class="cta-inner text-center rounded">
+            <div id="notifications">
+          
+            </div>
             <h2 class="section-heading mb-4">
               <span class="section-heading-upper">Student Requests</span>
             </h2>
-
             <table id="clerkRequestTable"  style="width:100%">
               <thead>
                 <tr>
@@ -52,7 +79,7 @@
                   <td>Request Date</td>
                   <td>Due Date</td>
                   <td>ID</td>
-                  <td>Attachments</td>
+                  <td>Documents</td>
                   <td>Action</td>
                 </tr>
               </thead>
@@ -65,7 +92,7 @@
                       <td class="text-black-50"><?=$row["due_date"]?></td>
                       <td class="text-black-50"><?=$row["request_id"]?></td>
                       <td class="">
-                        <a href="#" class="btn btn-info btn-sm rounded-0 editBtn" type="button">Attachments</a>
+                        <a href='#' class='btn btn-info btn-sm rounded-0 editBtn mr-3' onclick='showAttachments(`<?=$row["attachments"]?>`)' type="button">Documents</a>
                     </td>
                       <td class="">
                           <a href="#" class="btn btn-success btn-sm rounded-0 editBtn" onclick="showModal('<?=$row['request_id']?>')" id="<?=$row["request_id"]?>" type="button"><i class="fa fa-edit"></i></a>
@@ -89,17 +116,75 @@
             }],
             order: [
                 [1, 'asc']
-            ]
+            ],
         });
+
     });
 </script>
 <script>
-  // $('#clerkEditRequest').on('click', function(){
-  //   $('#edit-student-request').modal('show');
-  // });
+
+  function getOverduedRequests(){
+    $.ajax({
+        type: 'GET',
+        url: '/getOverduedRequests',
+        success: function(data) {
+            console.log(data);
+            let requests = [];
+            if(JSON.parse(data).length > 0){
+              $('#notifications').html('');
+            JSON.parse(data).forEach(el=>{
+              requests.push(el.request_id);
+            });
+            $('#notifications').html(`<div class="alert alert-danger" role="alert">
+              You currently have `+JSON.parse(data).length+` request/s that are about to be overdued.
+              Please check these requests:
+              <div id="request_ids"></div>
+            </div>`);
+            requests.forEach(el=>{
+              $('#request_ids').append(el);
+            });
+            }
+           
+            // $('#edit-student-request').modal('hide');
+            // $('#success').show();
+            // $("#success").delay(3200).fadeOut(300);
+            // $('#clerkRequestTable').DataTable().clear().destroy();
+            // $('#clerkRequestTable').DataTable().draw();
+        },
+
+    });
+  }
+  getOverduedRequests();
+ 
   function showModal(request_id){
     $('#edit-student-request').modal('show');
     $('#request_id').html('<input type="text" id="request_id_val" name="request_id" value="'+request_id+'" hidden>');
+  }
+
+  function showAttachments(attachments){
+    console.log(attachments);
+    $('#attachments-modal').modal('toggle');
+    // <img src="{{ asset('uploads/gwa/1626957329.jpg') }}" alt="">
+    $('#attachments-body').html('');
+    let keys = Object.keys(JSON.parse(attachments));
+    let values = Object.values(JSON.parse(attachments));
+    let titles = [];
+    let images = "";
+    keys.forEach((el,index) => {
+      let title;
+      if(el == 'gwa'){
+        title = 'Grade Weighted Average';
+      }else if(el == 'registration'){
+        title = 'Student Registration';
+      }else if(el == 'id'){
+        title = 'Student 2X2 ID Picture';
+      }
+      $('#attachments-body').append(`<p class="ml-4">`+title+`</p><center><img width="500px" class="mb-5" src="{{ asset('uploads/`+el+`/`+values[index]+`') }}" alt=""></center><hr>`);
+    });
+    console.log(typeof JSON.parse(attachments));
+    console.log(keys);
+    console.log(values);
+    console.log(images);
   }
   $('#select-status').change(function(){
     if($('#select-status').find(":selected").text() == 'Denied'){
@@ -124,7 +209,11 @@
         contentType: false,
         processData: false,
         success: function(data) {
-            console.log(data);
+            $('#edit-student-request').modal('hide');
+            $('#success').show();
+            $("#success").delay(3200).fadeOut(300);
+            // $('#clerkRequestTable').DataTable().clear().destroy();
+            // $('#clerkRequestTable').DataTable().draw();
         },
 
     });

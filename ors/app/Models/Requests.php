@@ -16,6 +16,7 @@ class Requests extends Model
         'due_date',
         'request_id',
         'attachments',
+        'department',
     ];
 }
 

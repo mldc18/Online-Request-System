@@ -73,6 +73,12 @@
   </style>
 
 <center>
+  <div class="alert alert-success w-50 m-0 m-auto" style="display:none" id="success-acad-form" role="alert">
+    Successfully sent a Request
+  </div>
+  <div class="alert alert-danger w-50 m-0 m-auto" style="display:none" id="danger-acad-form" role="alert">
+    There was a problem upon updating status of Request
+  </div>
     <div class="containeer mb-5 mt-3 py-4 text-left">
         <div class="px-4">
             <form action="/submitAcademicForm" enctype="multipart/form-data" id="academic-form" method="POST">
@@ -145,7 +151,13 @@
             processData: false,
             success: function(data) {
                 console.log(data);
-            },
+                $('#success-acad-form').show();
+                $("#success-acad-form").delay(3200).fadeOut(300);
+            },error: function(){
+              $('#danger-acad-form').show();
+                $("#danger-acad-form").delay(3200).fadeOut(300);
+            }
+            
 
         });
     });

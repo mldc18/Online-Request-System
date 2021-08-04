@@ -25,6 +25,11 @@
   <link href="{{asset('css/request.css')}}" rel="stylesheet">
   <link href="{{asset('css/faqs.css')}}" rel="stylesheet">
 
+  <style>
+    .bg-faded{
+      margin-top: 100px;
+    }
+  </style>
 </head>
 
 <body>
@@ -47,7 +52,7 @@
               @if(auth()->user()->user_type == 'student')
                 <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
               @else
-                <a class="nav-link text-uppercase text-expanded" href="/clerk">Home</a>
+                <a class="nav-link text-uppercase text-expanded" href="/clerk/{{ auth()->user()->department }}">Home</a>
               @endif
             @else
               <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
@@ -56,14 +61,14 @@
           <li class="nav-item px-lg-4 {{ request()->is('listofrequest') ? 'active' : '' }}">
             <a class="nav-link text-uppercase text-expanded" href="/listofrequest">List of Request</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded {{ (request()->is('faqs')) ? 'active' : '' }}" href="/faqs">FAQS</a>
+          <li class="nav-item px-lg-4 {{ (request()->is('faqs')) ? 'active' : '' }}">
+            <a class="nav-link text-uppercase text-expanded" href="/faqs">FAQS</a>
           </li>
           
 
           @guest
           <li class="nav-item px-lg-4 {{ request()->is('login') ? 'active' : '' }}">
-            <a class="nav-link text-uppercase text-expanded" href="{{ route('login') }}">{{ 'Login' }}</a>
+            <a class="nav-link text-uppercase text-expanded" href="/sign-in/google">{{ 'Login' }}</a>
           </li>
           @else
             @if(auth()->user()->user_type == 'student')
@@ -107,6 +112,239 @@
         </div>
         <button class="btn btn-sm btn-info">Save</button>`);
       }
+    });
+
+    $('#open_academic_form').on('click', function(){
+      $('#additional_reqs').html('');
+      $('#additional_quals').html('');
+      $('#edit_academic_modal').modal('show');
+    });
+
+    $('#open_athletic_form').on('click', function(){
+      $('#additional_reqs').html('');
+      $('#additional_quals').html('');
+      $('#edit_athletic_modal').modal('show');
+    });
+
+    $('#open_tor_form').on('click', function(){
+      $('#additional_reqs').html('');
+      $('#additional_quals').html('');
+      $('#edit_tor_modal').modal('show');
+    });
+
+    $('#open_goodmoral_form').on('click', function(){
+      $('#additional_reqs').html('');
+      $('#additional_quals').html('');
+      $('#edit_goodmoral_modal').modal('show');
+    });
+
+    $('#open_absence_form').on('click', function(){
+      $('#additional_reqs').html('');
+      $('#additional_quals').html('');
+      $('#edit_absence_modal').modal('show');
+    });
+
+    $('#open_return_form').on('click', function(){
+      $('#additional_reqs').html('');
+      $('#additional_quals').html('');
+      $('#edit_return_modal').modal('show');
+    });
+
+
+    function appendReq(){
+      $('#additional_reqs').append(`
+        <div class="req-parent input-group mb-3">
+          <input type="text" class="form-control" class="mb-2" name="requirements[]">
+          <div class="input-group-append">
+            <button class="btn remove-req btn-outline-danger" onclick="removeReq(this)" type="button">Delete</button>
+          </div>
+        </div>`);
+    }
+    
+    function appendQual(){
+      $('#additional_quals').append(`
+        <div class="qual-parent input-group mb-3">
+          <input type="text" class="form-control" class="mb-2" name="qualifications[]">
+          <div class="input-group-append">
+            <button class="btn remove-qual btn-outline-danger" onclick="removeQual(this)" type="button">Delete</button>
+          </div>
+        </div>`);
+    }
+
+    function removeReq(el){
+      $(el).closest('.req-parent').remove();
+    }
+
+    function removeQual(el){
+      $(el).closest('.qual-parent').remove();
+    }
+
+    $('#edit-academic-form').submit(function(e){
+      e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var formData = new FormData(this);
+        $.ajax({
+            type: 'POST',
+            url: $('#edit-academic-form').attr('action'),
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                console.log(data);
+                $('#edit_academic_modal').modal('hide');
+                $('.success-edit-form').show();
+                $(".success-edit-form").delay(3200).fadeOut(300);
+            },error: function(){
+                $('#edit_academic_modal').modal('hide');
+                $('.danger-edit-form').show();
+                $(".danger-edit-form").delay(3200).fadeOut(300);
+            }
+        });
+    });
+
+    $('#edit-athletic-form').submit(function(e){
+      e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var formData = new FormData(this);
+        $.ajax({
+            type: 'POST',
+            url: $('#edit-athletic-form').attr('action'),
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                console.log(data);
+                $('#edit_athletic_modal').modal('hide');
+                $('.success-edit-form').show();
+                $(".success-edit-form").delay(3200).fadeOut(300);
+            },error: function(){
+                $('#edit_athletic_modal').modal('hide');
+                $('.danger-edit-form').show();
+                $(".danger-edit-form").delay(3200).fadeOut(300);
+            }
+        });
+    });
+
+    $('#edit-tor-form').submit(function(e){
+      e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var formData = new FormData(this);
+        $.ajax({
+            type: 'POST',
+            url: $('#edit-tor-form').attr('action'),
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                console.log(data);
+                $('#edit_tor_modal').modal('hide');
+                $('.success-edit-form').show();
+                $(".success-edit-form").delay(3200).fadeOut(300);
+            },error: function(){
+                $('#edit_tor_modal').modal('hide');
+                $('.danger-edit-form').show();
+                $(".danger-edit-form").delay(3200).fadeOut(300);
+            }
+        });
+    });
+
+    $('#edit-goodmoral-form').submit(function(e){
+      e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var formData = new FormData(this);
+        $.ajax({
+            type: 'POST',
+            url: $('#edit-goodmoral-form').attr('action'),
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                console.log(data);
+                $('#edit_goodmoral_modal').modal('hide');
+                $('.success-edit-form').show();
+                $(".success-edit-form").delay(3200).fadeOut(300);
+            },error: function(){
+                $('#edit_goodmoral_modal').modal('hide');
+                $('.danger-edit-form').show();
+                $(".danger-edit-form").delay(3200).fadeOut(300);
+            }
+        });
+    });
+
+    $('#edit-absence-form').submit(function(e){
+      e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var formData = new FormData(this);
+        $.ajax({
+            type: 'POST',
+            url: $('#edit-absence-form').attr('action'),
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                console.log(data);
+                $('#edit_absence_modal').modal('hide');
+                $('.success-edit-form').show();
+                $(".success-edit-form").delay(3200).fadeOut(300);
+            },error: function(){
+                $('#edit_absence_modal').modal('hide');
+                $('.danger-edit-form').show();
+                $(".danger-edit-form").delay(3200).fadeOut(300);
+            }
+        });
+    });
+
+    $('#edit-return-form').submit(function(e){
+      e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var formData = new FormData(this);
+        $.ajax({
+            type: 'POST',
+            url: $('#edit-return-form').attr('action'),
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                console.log(data);
+                $('#edit_return_modal').modal('hide');
+                $('.success-edit-form').show();
+                $(".success-edit-form").delay(3200).fadeOut(300);
+            },error: function(){
+                $('#edit_return_modal').modal('hide');
+                $('.danger-edit-form').show();
+                $(".danger-edit-form").delay(3200).fadeOut(300);
+            }
+        });
     });
   </script>
 </body>

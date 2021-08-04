@@ -7,9 +7,9 @@ use App\Models\Requests;
 
 class ClerkController extends Controller
 {
-    public function index()
+    public function index($department)
     {
-        $requests = Requests::get();
+        $requests = Requests::where('department', $department)->get();
         return view('rcvdrequest', ['title'=>'HOME', 'requests'=>$requests]);
     }
 

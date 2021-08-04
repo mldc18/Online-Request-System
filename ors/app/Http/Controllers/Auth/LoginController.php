@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Socialite;
 class LoginController extends Controller
 {
     /*
@@ -45,30 +46,36 @@ class LoginController extends Controller
         return view('auth.login', ['title'=>'LOGIN']);
     }
 
-    public function processLogin(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-        ]);
-        $credentials = $request->only('email', 'password');
+    public function google(){
+        return Socialite::driver('google')->redirect();
+    }   
 
-        $user = User::where('email',$request->email)->first();
-        if (Auth::attempt($credentials)) {
-            if($user->user_type == 'student'){
-                return redirect()->route('home');
-            }else if($user->user_type == 'clerk'){
-                return redirect()->route('clerk');
-            }
-        }else{
-            dd('WTF');
-            session()->flash('message', 'Invalid credentials');
-            return redirect()->back();
+    public function googleRedirect(){
+        try {
+            $user = Socialite::driver('google')->user();    
+        } catch (\Exception $e) {
+            return redirect('/login');
         }
+        $existingUser = User::where('email', $user->email)->first();
+        
+        if($existingUser){
+            $user = User::where('email', $existingUser->email)->first();
+
+            if($user->user_type == 'student'){
+                Auth::login($user);
+                return redirect('/home');
+            }else if($user->user_type == 'clerk'){
+
+                Auth::login($user);
+                return redirect('/clerk/'.$user->department);
+            }
+            
+        }
+        return redirect()->to('/');
     }
 
     public function logout() {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
       }
 }

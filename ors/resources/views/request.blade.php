@@ -79,25 +79,59 @@
   <select id="demo-select" class="w-50">
     <option value="selectForm1">Academic Scholarship</option>
     <option value="selectForm2">Athletic Scholarship</option>
+    <option value="selectForm3">Certificate of Good Moral</option>
+    <option value="selectForm4">Transcript of Records</option>
+    <option value="selectForm5">Leave of Absence</option>
+    <option value="selectForm6">Returning Student Admission</option>
+    <option value="selectForm7">Course Accreditation</option>
   </select>
-  <form action="#" method="post" id="form1" class="hidden">
-        @include('listrequestform_2.academicrequestform')
-  </form>
-  <form action="#" method="post" id="form2" class="hidden">
-        @include('listrequestform_2.athleticrequestform')
-  </form>
+  <div id="form_div">
+
+  </div>
+  
 </center>
 
-  
 <script>
     function showCorrectForm(demoSelectValue) {
-  if (demoSelectValue == "selectForm1"){
-    $('#form2').addClass('hidden');
-    $('#form1').removeClass('hidden');
-  } else if(demoSelectValue == "selectForm2"){
-    $('#form1').addClass('hidden');
-    $('#form2').removeClass('hidden');
-  }
+      $('#form_div').html('');
+      if (demoSelectValue == "selectForm1"){
+        $('#form_div').html(`
+        <form action="/submitAcademicForm" method="post" id="form1">
+              @csrf
+              @include('listrequestform_2.academicrequestform') 
+          </form>`);
+      } else if(demoSelectValue == "selectForm2"){
+        $('#form_div').html(`
+        <form action="/submitAthleticForm" method="post" id="form2">
+              @csrf
+              @include('listrequestform_2.athleticrequestform')
+        </form>`);
+      }else if(demoSelectValue == "selectForm3"){
+        $('#form_div').html(`
+        <form action="/submitGoodMoralForm" method="post" id="form3">
+            @include('listrequestform_2.goodmoralrequestform')
+        </form>`);
+      }else if(demoSelectValue == "selectForm4"){
+        $('#form_div').html(`
+        <form action="/submitTorForm" method="post" id="form5">
+          @include('listrequestform_2.torrequestform')
+        </form>`);
+      }else if(demoSelectValue == "selectForm5"){
+        $('#form_div').html(`
+        <form action="/submitLoaForm" method="post" id="form5">
+          @include('listrequestform_2.loarequestform')
+        </form>`);
+      }else if(demoSelectValue == "selectForm6"){
+        $('#form_div').html(`
+        <form action="/submitReturnForm" method="post" id="form6">
+          @include('listrequestform_2.returningrequestform')
+        </form>`);
+      }else if(demoSelectValue == "selectForm7"){
+        $('#form_div').html(`
+        <form action="/submitAccreditationForm" method="post" id="form7">
+          @include('listrequestform_2.accreditationrequestform')
+        </form>`);
+      }
 }
 // activate pagka load ng page
 $(document).ready(function(){
@@ -108,5 +142,6 @@ $(document).ready(function(){
 $('#demo-select').off('change').on('change', function(){
   showCorrectForm($(this).val());
 });
+
 </script>
 @endsection
